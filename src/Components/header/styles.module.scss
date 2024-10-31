@@ -1,0 +1,41 @@
+@import '../../theme/theme.module.scss';
+
+.container {
+    width: 100%;
+    padding: 33px 50px 30px 40px;
+
+    border-bottom: 1px solid $gray-300;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .logo {
+        width: 101px;
+        height: 38px;
+    }
+
+    .bag {
+        width: 33px;
+        height: 33px;
+    }
+    
+    .bagWrapper {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .countItems {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        margin-top: 4px;
+    }
+}
+
+
+
+
