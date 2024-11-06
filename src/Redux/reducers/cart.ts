@@ -1,4 +1,4 @@
-// reducers/cart.ts
+
 import { ProductType } from '@/app/type/itemType';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -32,7 +32,6 @@ const cartSlice = createSlice({
       state.qntd = state.items.reduce((total, item) => total + item.quantity, 0);
     },
     removeFromCart: (state, action) => { 
-        console.log(action)
       const index = state.items.findIndex(item => item.id === action.payload);
       if (index !== -1) {
         state.items.splice(index, 1); 
@@ -42,10 +41,16 @@ const cartSlice = createSlice({
       state.qntd = state.items.reduce((total, item) => total + item.quantity, 0);
     },
     removeQntd: (state, action) => { 
-      const item = state.items.find(item => item.id === action.payload);
-      item && item.quantity > 1 ? item.quantity -= 1 : item?.quantity
-
-  
+      const itemIndex = state.items.findIndex(item => item.id === action.payload);
+      const item = state.items[itemIndex];
+    
+      if (item) {
+        if (item.quantity > 1) {
+          item.quantity -= 1;
+        } 
+      }
+    
+      // Atualiza a quantidade total
       state.qntd = state.items.reduce((total, item) => total + item.quantity, 0);
     },
   },

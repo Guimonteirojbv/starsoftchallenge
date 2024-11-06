@@ -1,5 +1,5 @@
 import { ProductType } from "@/app/type/itemType";
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 
 
 interface ProductsState {
@@ -29,31 +29,41 @@ const productsSlice = createSlice({
     name: 'products',
     initialState,
     reducers: {
+        setProducts: (state, action: PayloadAction<ProductType[]>) => {
+          state.products = action.payload;
+        },
+        addProducts: (state, action: PayloadAction<ProductType[]>) => {
+          
+          state.products.push(...action.payload);
         
-    }, 
-    extraReducers: (builder) => {
-        builder
-        .addCase(fetchData.pending, (state) => {
-            state.status = 'loading'
-        })
-        .addCase(fetchData.fulfilled, (state, action) => {
-            state.status = 'succeeded';
-            state.page = state.page + 1 
-            if(Array.isArray(action.payload.data)) {
-                state.products.push(...action.payload.data);
-            }
-            else {
-                console.error('erro')
-            }
-        })
-        .addCase(fetchData.rejected, (state, action) => {
-            state.status = 'failed';
-            if(action.error.message)
-            state.error = action.error.message
-        })
-        
+        },
+        incrementPage: (state) => {
+          state.page += 1;
+        },
     }
+    // extraReducers: (builder) => {
+    //     builder
+    //     .addCase(fetchData.pending, (state) => {
+    //         state.status = 'loading'
+    //     })
+    //     .addCase(fetchData.fulfilled, (state, action) => {
+    //         state.status = 'succeeded';
+    //         state.page = state.page + 1 
+    //         if(Array.isArray(action.payload.data)) {
+    //             state.products.push(...action.payload.data);
+    //         }
+    //         else {
+    //             console.error('erro')
+    //         }
+    //     })
+    //     .addCase(fetchData.rejected, (state, action) => {
+    //         state.status = 'failed';
+    //         if(action.error.message)
+    //         state.error = action.error.message
+    //     })
+        
+    // }
 })
 
-
+export const { setProducts, addProducts, incrementPage } = productsSlice.actions;
 export default productsSlice.reducer

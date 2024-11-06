@@ -1,25 +1,26 @@
 import Image from "next/image";
 
 import Elipses from '@/assets/Ellipse.png'
-import ProductImage from '@/assets/star.png'
 import Trash from '@/assets/trash.svg'
 
 import styles from './styles.module.scss'
 import { ProductType } from "@/app/type/itemType";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/Redux/store";
-import { addToCart, removeQntd } from "@/Redux/reducers/cart";
+import { useDispatch  } from "react-redux";
+import { AppDispatch } from "@/Redux/store";
+import { addToCart, removeFromCart, removeQntd } from "@/Redux/reducers/cart";
 
 
 
 export function CartItem({ id,name, price, image, description, quantity}: ProductType) {
     const dispatch = useDispatch<AppDispatch>()
-    const items = useSelector((state: RootState) => state.cart.items)
+   
 
-    
+    const handleRemoveQntd = (id: number) => {
+        dispatch(removeQntd(id))
+    }
 
     const handleRemoveFromCart = (id: number) => {
-        dispatch(removeQntd(id))
+        dispatch(removeFromCart(id))
     }
 
     const handleAddToCart = (id: number) => {
@@ -43,7 +44,7 @@ export function CartItem({ id,name, price, image, description, quantity}: Produc
 
                     <div className={styles.buttonActionsWrapper}>
                         <div className={styles.buttonQntdContainer}>
-                            <button onClick={() => handleRemoveFromCart(id)}>-</button>
+                            <button onClick={() => handleRemoveQntd(id)}>-</button>
                             <span>{quantity}</span>
                             <button onClick={() => handleAddToCart(id)}>+</button>
                         </div>

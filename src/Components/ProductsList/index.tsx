@@ -11,6 +11,7 @@ export function ProducsList() {
     const dispatch = useDispatch<AppDispatch>()
 
 
+
     const handleLoadMoreProducts = () => {
         const scrollPositionCurrent = window.scrollY;
 
