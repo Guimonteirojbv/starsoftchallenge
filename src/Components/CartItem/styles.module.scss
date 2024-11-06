@@ -1,0 +1,118 @@
+@import '../../theme/theme.module.scss';
+
+.container {
+    background-color: $grey-500;
+    padding: 20px 30px;
+
+    border-radius: 8px;
+    width: 620px;
+    height: 200px;
+
+    
+
+    .wrapper {
+
+        display: flex;
+        gap: 30px;
+
+        .wrapperImage {
+            width: 160px;
+            height: 160px;
+            background-color: $gray-200;
+            flex-shrink: 0;
+
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+    .contentItemWrapper {
+        max-width: 100%;
+        h3 {
+            font-size: 1rem;
+
+        }
+
+        p {
+            font-size: 0.75rem;
+            color: $gray-100;
+            max-width: 100%;
+            max-height: 20px;
+            overflow: hidden;
+    
+            text-overflow: ellipsis;
+
+            
+
+        }
+
+        .priceWrapper {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .buttonActionsWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+
+
+        .buttonQntdContainer {
+            border-radius: 8px;
+            background-color: $grey-400;
+            display: flex;
+            gap: 30px;
+            padding: 16px 8px;
+            button { 
+                background-color: transparent;
+                border: none;
+                font-size: 20px;
+
+                &:hover { 
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+
+        .buttonTrash {
+            background-color: $orange-700;
+            border-color: transparent;
+            padding: 6px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    }
+}

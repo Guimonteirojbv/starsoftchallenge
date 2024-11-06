@@ -1,0 +1,92 @@
+@import '../../theme/theme.module.scss';
+
+.cartWrapper {
+    width: 680px;
+    height: 1117px;
+
+    background-color: $grey-400;
+
+    padding: 60px 30px 170px 30px;
+    
+
+
+    .modalHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: 'Poppins';
+        }
+
+        button {
+            border-radius: 50%;
+            border-color: transparent;
+            background-color: #373737;
+        }
+    }
+
+    .wrapperItens {
+        max-height: 500px;
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        overflow: scroll;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 2px;
+            background-color: $gray-700;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $gray-700;
+        }
+
+        scrollbar-color: $gray-700; 
+        scrollbar-width: 2px; 
+    }
+
+    .wrapperTotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 74px;
+
+        span {
+            font-weight: bold;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+        }
+    }
+
+    .btnFinishBuy {
+        width: 100%;
+        height: 80px;
+        background-color: $orange-700;
+
+        margin-top: 70px;
+
+        border: none;
+
+        border-radius: 8px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    
+}

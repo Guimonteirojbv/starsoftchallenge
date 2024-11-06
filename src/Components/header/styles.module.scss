@@ -10,10 +10,18 @@
     align-items: center;
     justify-content: space-between;
 
+    position: relative;
+
 
     .logo {
         width: 101px;
         height: 38px;
+    }
+
+    .buttonBag {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
     }
 
     .bag {
@@ -34,6 +42,8 @@
         text-align: center;
         margin-top: 4px;
     }
+
+
 }
 
 

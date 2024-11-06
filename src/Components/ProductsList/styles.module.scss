@@ -1,0 +1,62 @@
+@import "../../theme/theme.module.scss";
+
+
+.showcase {
+ 
+  max-width: 1455px;
+  display: flex;
+  
+  flex-wrap: wrap;
+  gap: 25px;
+
+  margin: 190px auto;
+
+  @media (max-width: 381px) {
+    justify-content: center;
+    margin: 50px auto;
+  }
+
+  @media (max-width:740px) {
+    justify-content: center;
+    margin: 50px auto;
+  }
+
+  @media (max-width:940px) {
+    justify-content: center;
+   
+  }
+  @media (max-width:1440px) {
+    justify-content: center;
+    
+  }
+
+
+}
+
+.wrapperBtnLoad {
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 40px;
+}
+
+.load {
+  padding: 30px 127px;
+  font-family: 'Poppins';
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  
+
+  background-color: $gray-300;
+  border-radius: 8px;
+  border: none;
+}
+
+.loading {
+  width: 403px;
+  height: 10px;
+  border-radius: 8px;
+  background-color: $orange-700;
+}
