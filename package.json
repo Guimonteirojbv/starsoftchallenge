@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
-  
+    "start": "next start",
+    "install": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
